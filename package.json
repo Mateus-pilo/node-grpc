@@ -4,7 +4,8 @@
   "description": "This project usually a test grpc lib",
   "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:proto": "sh ./scripts/proto.sh"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,8 @@
   "homepage": "https://github.com/Mateus-pilo/node-grpc#readme",
   "dependencies": {
     "dotenv": "10.0.0",
-    "@grpc/grpc-js": "1.3.2",
-    "google-protobuf": "3.17.0"
+    "google-protobuf": "3.17.0",
+    "grpc": "1.24.10"
   },
   "devDependencies": {
     "@types/dotenv": "8.2.0",
