@@ -14,11 +14,13 @@ for f in ./src/proto/*; do
       continue
   fi
 
+  mkdir -p "${f//src/dist}"
+
   # loop over all the available proto files and compile them into respective dir
   # JavaScript code generating
   ${GRPC_TOOLS_NODE_PROTOC} \
-      --js_out=import_style=commonjs,binary:"${f}" \
-      --grpc_out="${f}" \
+      --js_out=import_style=commonjs,binary:"${f//src/dist}" \
+      --grpc_out="${f//src/dist}" \
       --plugin=protoc-gen-grpc:"${GRPC_TOOLS_NODE_PROTOC_PLUGIN}" \
       -I "${f}" \
       "${f}"/*.proto
